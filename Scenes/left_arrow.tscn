@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dklqa047af7uf"]
+
+[ext_resource type="Script" uid="uid://3a58083g1wvx" path="res://Scripts/Arrow.cs" id="1_v4pk6"]
+[ext_resource type="Texture2D" uid="uid://pq737an6bfkr" path="res://Assets/spritesheet_ui.png" id="2_avvkj"]
+
+[node name="LeftArrow" type="Node2D" unique_id=1617298851]
+script = ExtResource("1_v4pk6")
+Direction = Vector2(-1, 0)
+metadata/_custom_type_script = "uid://3a58083g1wvx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1379057364]
+position = Vector2(0, 1)
+rotation = -3.1415925
+texture = ExtResource("2_avvkj")
+hframes = 23
+vframes = 9
+frame = 82
