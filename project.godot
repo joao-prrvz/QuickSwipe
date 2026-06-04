@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="QuickSwipe"
-run/main_scene="uid://hm16woa8j6gc"
+run/main_scene="uid://cjleg5igsmcfe"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=270
+window/size/viewport_height=480
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

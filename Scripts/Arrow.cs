@@ -15,13 +15,27 @@ public partial class Arrow : Node2D
 	public Vector2 Direction { get; set; }
 	public bool Enabled { get; set; } = true;
 	public EventHandler<SwipeEventArgs>? Swipe;
+	
+	public override void _Ready()
+	{
+		if (Engine.IsEditorHint())
+			return;
+		Swipe += This_OnSwipe;
+	}
+
+	private void This_OnSwipe(object? sender, SwipeEventArgs e)
+	{
+		GD.Print(e.Valid);
+	}
 
 	public override void _Process(double delta)
 	{
+		if (Engine.IsEditorHint())
+			return;
 		if (!Enabled)
 			return;
 		var mouseVelocity = Input.GetLastMouseVelocity().Normalized();
-		var swipeDirection = GetSwipeDirection(mouseVelocity);
+		var swipeDirection = GetSwipeDirection(Vector2.Zero);
 		if (swipeDirection != Vector2.Zero)
 			OnSwipe(swipeDirection == -Direction);
 	}

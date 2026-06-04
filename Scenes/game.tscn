@@ -1,13 +1,33 @@
 [gd_scene format=3 uid="uid://hm16woa8j6gc"]
 
 [ext_resource type="Script" uid="uid://bs1j0u4v7r12l" path="res://Scripts/Game.cs" id="1_ebmjs"]
+[ext_resource type="FontFile" uid="uid://bceld3ax1fsnc" path="res://Assets/BoldPixels.ttf" id="2_qxrlw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wrm1d"]
+font = ExtResource("2_qxrlw")
 
 [node name="Game" type="Node2D" unique_id=797712860]
 script = ExtResource("1_ebmjs")
 
 [node name="Timer" type="Timer" parent="." unique_id=983451402]
-wait_time = 0.5
-one_shot = true
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=598148825]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
+limit_enabled = false
+
+[node name="Time" type="Label" parent="." unique_id=1300256475]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 52.0
+offset_bottom = -48.0
+text = "Time left: 60s"
+label_settings = SubResource("LabelSettings_wrm1d")
+
+[node name="Score" type="Label" parent="." unique_id=1982805137]
+offset_left = -48.0
+offset_top = -80.0
+offset_right = 13.0
+offset_bottom = -64.0
+text = "Score : 0"
+label_settings = SubResource("LabelSettings_wrm1d")

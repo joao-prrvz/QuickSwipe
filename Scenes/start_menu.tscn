@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cjleg5igsmcfe"]
+
+[ext_resource type="Script" uid="uid://cdfk2pctlh46e" path="res://Scripts/StartMenu.cs" id="1_jgtwh"]
+[ext_resource type="FontFile" uid="uid://bceld3ax1fsnc" path="res://Assets/BoldPixels.ttf" id="1_juhg0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jgtwh"]
+font = ExtResource("1_juhg0")
+
+[node name="StartMenu" type="Node2D" unique_id=1995277680]
+script = ExtResource("1_jgtwh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2080360439]
+zoom = Vector2(2, 2)
+
+[node name="Play" type="Button" parent="." unique_id=622289196]
+offset_left = -24.0
+offset_top = -8.0
+offset_right = 24.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("1_juhg0")
+text = "PLAY"
+
+[node name="Time" type="Label" parent="." unique_id=82909087]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -48.0
+text = "Quick swipe"
+label_settings = SubResource("LabelSettings_jgtwh")
+horizontal_alignment = 1

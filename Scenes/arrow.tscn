@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://2m0gigi2s6kl"]
+
+[ext_resource type="Script" uid="uid://3a58083g1wvx" path="res://Scripts/Arrow.cs" id="1_2u0bd"]
+[ext_resource type="Texture2D" uid="uid://pq737an6bfkr" path="res://Assets/spritesheet_ui.png" id="2_h5x2m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h5x2m"]
+load_path = "res://.godot/imported/spritesheet_ui.png-553615e903451013f8595515970caee2.ctex"
+
+[node name="Arrow" type="Node2D" unique_id=489003546]
+script = ExtResource("1_2u0bd")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2168984]
+position = Vector2(0, 2)
+texture = SubResource("CompressedTexture2D_h5x2m")
+hframes = 23
+vframes = 9
+frame = 58
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2068879103]
+position = Vector2(0, 1)
+rotation = 1.5707964
+texture = ExtResource("2_h5x2m")
+hframes = 23
+vframes = 9
+frame = 82

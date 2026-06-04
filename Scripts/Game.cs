@@ -7,8 +7,13 @@ public partial class Game : Node2D
 {
 	private PackedScene[] _arrowScenes = [];
 	private Timer _timer = null!;
+	private Label _lblScore = null!;
+	private Label _lblTime = null!;
 	private readonly Random _rnd = new();
 	private Arrow? _currentArrow;
+	private int _score;
+	private int _timeLeft = 60;
+	
 	public override void _Ready()
 	{
 		_arrowScenes = 
@@ -18,14 +23,18 @@ public partial class Game : Node2D
 			GD.Load<PackedScene>("res://Scenes/down_arrow.tscn"),
 			GD.Load<PackedScene>("res://Scenes/right_arrow.tscn"),
 		];
+		_lblTime = GetNode<Label>("Time");
+		_lblScore = GetNode<Label>("Score");
 		_timer = GetNode<Timer>("Timer");
 		_timer.Timeout += Timer_OnTimeout;
 		_timer.Start();
+		CreateRandomArrow();
 	}
 
 	private void Timer_OnTimeout()
 	{
-		CreateRandomArrow();
+		_timeLeft--;
+		_lblTime.Text = $"Time left: {_timeLeft}s";
 	}
 
 	private void CreateRandomArrow()
@@ -44,6 +53,11 @@ public partial class Game : Node2D
 
 	private void Arrow_OnSwipe(object? sender, SwipeEventArgs e)
 	{
+		if (e.Valid)
+		{
+			_score++;
+			_lblScore.Text = $"Score: {_score}";
+		}
 		CreateRandomArrow();
 	}
 }
